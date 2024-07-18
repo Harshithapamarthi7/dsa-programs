@@ -1,0 +1,28 @@
+#include<stdio.h>
+ int main()
+ {
+ int n,r,m,p;
+ scanf("%d",&n);
+ scanf("%d",&r);
+ scanf("%d",&m);
+ p=fact(n)/fact(n-r)*fact(r);
+ printf("%d",p%m);
+ int fact(int k)
+ {
+ int f=1,i;
+ if(k==0)
+ {
+  return f;
+ }
+ else
+ {
+ for(i=0;i<=k;i++)
+ {
+ f=f*i;
+ }
+ }
+ return f;
+ }
+
+ 
+  
