@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+int compare_asc(const void *a, const void *b)
+{
+    return (*(int *)a - *(int *)b);
+}
+int compare_desc(const void *a, const void *b) 
+{
+    return (*(int *)b - *(int *)a);
+}
+int main() 
+{
+    int n;
+    scanf("%d", &n);
+    int arr[n];
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
+    int mid = n / 2;
+    qsort(arr, mid, sizeof(int), compare_asc);
+    qsort(arr + mid, n - mid, sizeof(int), compare_desc);
+    for (int i = 0; i < n; i++) 
+    {
+        printf("%d ", arr[i]);
+    }
+}
