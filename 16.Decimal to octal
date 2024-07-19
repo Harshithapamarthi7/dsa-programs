@@ -1,0 +1,24 @@
+#include <stdio.h>
+int main() 
+{
+    int decimal_number, remainder;
+    char octal_number[100];
+    int index = 0;
+    scanf("%d", &decimal_number);
+    if (decimal_number == 0)
+    {
+        printf("Octal representation is 0\n");
+        return 0;
+    }
+    while (decimal_number > 0)
+    {
+        remainder = decimal_number % 8;
+        octal_number[index++] = remainder + '0';  
+        decimal_number = decimal_number / 8;
+    }
+    printf("Octal representation is ");
+    for (int i = index - 1; i >= 0; i--)
+    {
+        putchar(octal_number[i]);
+    }
+}
